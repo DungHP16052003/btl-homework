@@ -1,0 +1,113 @@
+{
+  "products": [
+   
+    {
+      "id": 1,
+      "name": "Quần dài kaki ECC Pants",
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/December2024/quan-dai-kaki-ecc-pants-den_(1).jpg",
+      "price": "539.000đ"
+    },
+
+    {
+      "id": 2,
+      "name": "Áo Sơ Mi Dài Tay Essentials Cotton",
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/November2024/24CMCW.QD004__Navy_4.jpg",
+      "price": "359.000đ"
+    },
+    {
+      "id": 3,
+      "name": "Áo Thun Nam Cotton 220GSM",
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/January2024/AT.220.NAU.1.jpg",
+      "price": "161.000đ"
+
+    },
+    {
+      "id": 4,
+      "name": "Áo Polo Nam Pique Cotton",
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/December2024/polo-pique-basic-cotton-103-nau-dam_(7).png",
+      "price": "254.000đ"
+    },
+    {
+      "id": 5,
+      "name": "Quần shorts ECC Ripstop",
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/September2024/Xam_Sang_1.jpg",
+      "price": "249.000đ"
+    }
+  ],
+  "category": [
+    
+    {
+      "id": 1,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/so-mi-cate_10.jpg",
+       "name": "SƠ MI",
+       "type": "Nam"
+       
+    },
+
+    {
+      "id": 2,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/ao-khoac-cate_16.jpg",
+      "name": "ÁO KHOÁC",
+      "type": "Nam"
+
+    },
+    {
+      "id": 3,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/quan-dai-cate_24.jpg",
+      "name": "QUẦN DÀI",
+      "type": "Nam"
+
+
+    },
+    {
+      "id": 4,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/quan-short-cate_36.jpg",
+       "name": "QUẦN SHORT",
+       "type": "Nam"
+
+    },
+    {
+      "id": 5,
+  "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/ao-thun-cate_86.jpg",
+  "name": "ÁO THUN",
+  "type": "Nam"
+
+    },
+    {
+      "id": 6,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/phu-kien-cate_63.jpg",
+       "name": "PHỤ KIỆN",
+       "type": "Nam"
+
+    },
+    {
+      "id": 7,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/Frame_img.jpg",
+       "name": "BRA&LEGGINGS",
+       "type": "Nữ"
+
+    },
+    {
+      "id": 8,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/Frame_img_(1).jpg",
+       "name": "ÁO THỂ THAO",
+       "type": "Nữ"
+
+    },
+    {
+      "id": 9,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/image_(3).jpg",
+       "name": "QUẦN THỂ THAO",
+       "type": "Nữ"
+
+    },
+    {
+      "id": 10,
+      "image": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/March2025/image_96.png",
+       "name": "PHỤ KIỆN",
+       "type": "Nữ"
+
+    }
+  ]
+}
+

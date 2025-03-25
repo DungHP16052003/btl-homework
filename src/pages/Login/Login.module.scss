@@ -1,0 +1,72 @@
+.wrapper{
+    background-color: #fff;
+    width: 557px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: auto;
+}
+.benefits{
+    display: flex;
+    gap: 10px;
+}
+.benefit_item  > img{
+    width: 158px;
+}
+.social_login{
+    gap: 10px;
+    display: flex;
+    margin-top: 20px;
+    button{
+        border-radius: 8px;
+        border: none;
+    }
+}
+.button_img{
+    gap: 5px;
+}
+.google > img{
+    width: 40px;
+}
+.facebook > img{
+    width: 35px;
+    height: 40px;
+}
+.login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    margin: auto;
+  }
+  
+  .login_form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .Login_button {
+    width: 104%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .Login_button:hover {
+    background-color: #333;
+  }
+  
+  
+  
+  
+  
+ 
