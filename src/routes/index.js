@@ -44,7 +44,6 @@ const routes = [
     {
         path: config.routes.users,
         component: Users,
-        protected: true,
     },
 
     {

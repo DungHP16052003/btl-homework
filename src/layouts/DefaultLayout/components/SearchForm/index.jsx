@@ -6,7 +6,8 @@ import config from "@/config";
 
 function SearchForm() {
   const navigate = useNavigate();
-  const handleLogout = () =>{
+  const handleLogout = (e) =>{
+    e.preventDefault();
        fetch(' https://api01.f8team.dev/api/auth/logout', {
         method:"POST",
         headers: {

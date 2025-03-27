@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Register.module.scss";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import config from "@/config";
+import AuthService from "@/services/AuthService";
 function Register() {
     const [params] = useSearchParams();
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ function Register() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [hasError, setHasError] = useState(false);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formValue = {
         firstName,
@@ -21,27 +22,37 @@ function Register() {
         password_confirmation: passwordConfirmation,
     };
       console.log(formValue);
-
-    fetch("https://api01.f8team.dev/api/auth/register", {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json",
-          },
-        body: JSON.stringify(formValue)
-    })
-    .then((res) => {
-        if(!res.ok){
-            throw res;
+    
+        try {
+          const data = await AuthService.postRegister(formValue);
+          localStorage.setItem("token", data.access_token);
+          navigate(params.get("continue") || config.routes.home);
+        } catch (error) {
+          console.log(error)
+          setHasError(true)
         }
-        return res.json();
-    })
-    .then((data) => {
-        localStorage.setItem("token", data.access_token);
-        navigate(params.get("continue") || config.routes.home);
-    })
-    .catch(() => {
-        setHasError(true);
-    })
+       
+      
+    // fetch("https://api01.f8team.dev/api/auth/register", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-type": "application/json",
+    //       },
+    //     body: JSON.stringify(formValue)
+    // })
+    // .then((res) => {
+    //     if(!res.ok){
+    //         throw res;
+    //     }
+    //     return res.json();
+    // })
+    // .then((data) => {
+    //     localStorage.setItem("token", data.access_token);
+    //     navigate(params.get("continue") || config.routes.home);
+    // })
+    // .catch(() => {
+    //     setHasError(true);
+    // })
   };
 
   return (

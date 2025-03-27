@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styles from "./Login.module.scss";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import config from "@/config";
 import useQuery from "@/hooks/useQuery";
+import AuthService from "@/services/AuthService";
+import httpRequest from "@/utils/httpRequest";
 function Login() {
   const query = useQuery();
   const navigate = useNavigate();
@@ -11,33 +13,22 @@ function Login() {
   const [password, setPassword] = useState("");
   const [hasError, setHasError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
       email,
       password,
     };
     console.log(formData);
-    fetch("https://api01.f8team.dev/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw res;
-        }
-        return res.json();
-      })
-      .then((data) => {
-        localStorage.setItem("token", data.access_token);
-        navigate(query.get("continue") || config.routes.home);
-      })
-      .catch(() => {
-        setHasError(true);
-      });
+
+   try {
+     const data = await AuthService.postLogin(formData);
+     httpRequest.setToken(data.access_token)
+     navigate(query.get("continue") || config.routes.home)
+   } catch (error) {
+       console.log(error);
+       setHasError(true);
+   }
   };
   return (
     <div className={styles.wrapper}>
@@ -70,22 +61,22 @@ function Login() {
       </div>
       <div className={styles.social_login}>
         <p>Đăng nhập bằng:</p>
-         <div className= {styles.button_img}>
-         <button className={styles.google}>
-          <img
-            data-v-7a4da43e=""
-            src="https://mcdn.coolmate.me/image/September2023/mceclip1_21.png"
-            alt=""
-          />
-        </button>
-        <button className={styles.facebook}>
-          <img
-            data-v-7a4da43e=""
-            src="https://mcdn.coolmate.me/image/September2023/mceclip0_86.png"
-            alt=""
-          />
-        </button>
-         </div>
+        <div className={styles.button_img}>
+          <button className={styles.google}>
+            <img
+              data-v-7a4da43e=""
+              src="https://mcdn.coolmate.me/image/September2023/mceclip1_21.png"
+              alt=""
+            />
+          </button>
+          <button className={styles.facebook}>
+            <img
+              data-v-7a4da43e=""
+              src="https://mcdn.coolmate.me/image/September2023/mceclip0_86.png"
+              alt=""
+            />
+          </button>
+        </div>
       </div>
       <form className={styles.login_form} onSubmit={handleSubmit}>
         <input
