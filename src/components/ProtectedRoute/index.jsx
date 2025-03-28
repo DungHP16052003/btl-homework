@@ -9,19 +9,18 @@ function ProtectedRoute({children}) {
     const [isloading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const fetchData = async () =>{
+        setIsLoading(true);
+
+        (async () => {
             try {
                 const data = await AuthService.getCurrentUser();
                 setCurrentUser(data.user);
-                setIsLoading(false)
+                setIsLoading(false);
             } catch (error) {
-                console.log(error);
-                
-                setIsLoading(false)
+                console.log(error)
+                setIsLoading(false);
             }
-
-        };
-        fetchData();
+        })();
         // setIsLoading(true);
         // fetch("https://api01.f8team.dev/api/auth/me", {
         //     headers:{

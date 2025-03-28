@@ -33,7 +33,6 @@ const routes = [
     {
         path: config.routes.products,
         component: Products,
-        protected: true,
     },
     {
         path: config.routes.product,
@@ -44,6 +43,8 @@ const routes = [
     {
         path: config.routes.users,
         component: Users,
+        protected: true,
+
     },
 
     {

@@ -5,6 +5,7 @@ import config from "@/config";
 import useQuery from "@/hooks/useQuery";
 import AuthService from "@/services/AuthService";
 import httpRequest from "@/utils/httpRequest";
+import Button from "@/components/Button";
 function Login() {
   const query = useQuery();
   const navigate = useNavigate();
@@ -99,7 +100,7 @@ function Login() {
             setHasError(false);
           }}
         />
-        <button className={styles.Login_button}>ĐĂNG NHẬP</button>
+          <Button large>ĐĂNG NHẬP</Button>
         {hasError && <p>Email va mat khau khong hop le</p>}
       </form>
       <div>

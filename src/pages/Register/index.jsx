@@ -3,6 +3,7 @@ import styles from "./Register.module.scss";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import config from "@/config";
 import AuthService from "@/services/AuthService";
+import Button from "@/components/Button";
 function Register() {
     const [params] = useSearchParams();
     const navigate = useNavigate();
@@ -153,7 +154,7 @@ function Register() {
             setHasError(false);
           }}
         />
-        <button className={styles.register_button}>ĐĂNG KÝ TÀI KHOẢN</button>
+        <Button large>ĐĂNG KÝ TÀI KHOẢN</Button>
         {hasError && <p>Email này đã được sử dụng. Vui lòng sử dụng email khác </p>}
       </form>
       <div>

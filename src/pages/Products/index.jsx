@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 function Products() {
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     fetch("http://localhost:3000/products")
     .then((res) => res.json())
@@ -13,10 +12,8 @@ function Products() {
       setProducts(data);
     });
   }, []);
-
   return (
     <div className={styles.wrapper}>
-      <h1>SẢN PHẨM MẶC HẰNG NGÀY</h1>
       <ul>
         {Array.isArray(products) &&
           products.map((product) => (

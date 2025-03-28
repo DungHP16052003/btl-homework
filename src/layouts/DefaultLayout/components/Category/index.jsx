@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import styles from "./Category.module.scss";
 function Category() {
   const [category, setCategory] = useState([]);

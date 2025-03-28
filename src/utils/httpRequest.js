@@ -22,8 +22,8 @@ const send = async (method, url, data, config) => {
 }
 
 export const setToken = (token) => {
-    localStorage.setItem("token", token);
     httpRequest.defaults.headers["Authorization"] = `Bearer ${token}`;
+    localStorage.setItem("token", token);
 };
 export const get = (url, config) => {
     return send("get", url, null, config)
