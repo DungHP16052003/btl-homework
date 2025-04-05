@@ -1,0 +1,99 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 1364px;
+  gap: 20px;
+}
+
+.banner_men img {
+  width: 655px;
+  height: 440px;
+  border-radius: 14px;
+  transition: transform 0.3 ease;
+}
+
+.banner_content_men {
+  position: absolute;
+  top: 189%;
+  left: 9%;
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+}
+
+.banner_content_men h2 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: bold;
+  width: 300px;
+}
+
+.banner_content_men p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.banner_content_men button {
+  background-color: white;
+  color: black;
+  padding: 15px 45px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 99px;
+}
+
+.banner_content_men button:hover {
+  background-color: #ddd;
+}
+
+.banner_women img {
+  width: 655px;
+  height: 440px;
+  border-radius: 14px;
+  transition: transform 0.3 ease;
+}
+
+.banner_men img:hover {
+  transform: translateY(-5PX);
+}
+
+.banner_women img:hover {
+  transform: translateY(-5PX);
+}
+
+.banner_content_women {
+  position: absolute;
+  top: 189%;
+  left: 52%;
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+}
+
+.banner_content_women h2 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: bold;
+  width: 328px;
+}
+
+.banner_content_women p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.banner_content_women button {
+  background-color: white;
+  color: black;
+  padding: 15px 45px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 99px;
+}
+
+.banner_content_women button:hover {
+  background-color: #ddd;
+}/*# sourceMappingURL=Discount.module.css.map */

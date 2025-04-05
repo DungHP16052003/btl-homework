@@ -7,12 +7,22 @@ import Products from "../pages/Products";
 import Users from "@/pages/Users";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
+import Profile from "@/pages/Profile";
+import Home2 from "@/pages/Home2";
+import NoFooterLayout from "@/layouts/NoFooterLayout";
+import EditProfile from "@/pages/Profile/Component/EditProfile";
+
 
 
 const routes = [
     {
         path: config.routes.home,
         component: Home,
+
+    },
+    {
+        path: config.routes.home2,
+        component: Home2,
 
     },
     //Auth
@@ -28,11 +38,22 @@ const routes = [
         layout:AdminLayout,
 
     },
-
     //Products
     {
         path: config.routes.products,
         component: Products,
+    },
+    {
+        path: config.routes.profile,
+        component: Profile,
+        layout:NoFooterLayout,
+
+    },
+    {
+        path: config.routes.editProfile,
+        component: EditProfile,
+        layout:NoFooterLayout,
+
     },
     {
         path: config.routes.product,

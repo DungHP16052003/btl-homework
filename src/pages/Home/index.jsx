@@ -3,7 +3,6 @@ import Products from "../Products";
 import styles from "./Home.module.scss"
 
 function Home() {
-   
   const dailyWearProduct = [
      {
       "id": 1,

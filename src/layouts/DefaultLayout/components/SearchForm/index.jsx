@@ -1,8 +1,9 @@
 
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import styles from "./SearchForm.module.scss"
 import 'boxicons/css/boxicons.min.css';
 import config from "@/config";
+import UserIcon from "../UserIcon";
 
 function SearchForm() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ function SearchForm() {
        })
        .then(() => {
        localStorage.removeItem("token");
+       localStorage.removeItem("user");
        navigate(config.routes.home)
        })
        .catch((error) => {
@@ -37,9 +39,7 @@ function SearchForm() {
           <i className='bx bx-search-alt-2'></i>
           <input type="text" id="search" placeholder="Tìm kiếm..." />
         </div>
-        <div className={styles.icon_user}>
-          <Link to={config.routes.login}><a href="#"><i className='bx bxs-user'></i></a></Link>
-        </div>
+       <UserIcon/>
         <div className={styles.icon_shopping}>
           <a href="#"><i className='bx bxs-shopping-bag'></i></a>
         </div>

@@ -1,0 +1,153 @@
+.wrapper {
+  background-color: #000;
+  height: 661px;
+}
+
+.footer_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1316px;
+  padding: 7px 0;
+  margin-bottom: 20px;
+}
+.footer_top h2 {
+  color: #fff;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 6px;
+}
+.footer_top p {
+  width: 354px;
+  font-size: 10px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.footer_top a > button {
+  font-size: 16px;
+  background-color: rgb(64, 64, 206);
+  color: #fff;
+  border-radius: 40px;
+  width: 230px;
+  height: 45px;
+  border: 1px solid rgb(64, 64, 206);
+}
+
+.footer_hotline {
+  display: flex;
+  margin-top: 16px;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer_hotline > p {
+  font-size: 12px;
+  width: 92px;
+}
+
+.footer_email {
+  display: flex;
+  margin-top: 20px;
+  margin-top: -20px;
+  gap: 10px;
+}
+
+.footer_email > a > p {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.footer_social {
+  margin-top: 40px;
+  height: 130px;
+  align-items: center;
+  justify-content: center;
+}
+.footer_social img {
+  width: 32px;
+}
+
+.footer_social a {
+  margin-right: 15px;
+}
+
+.footer_between {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1437px;
+  background-color: #000;
+}
+
+.footer_content {
+  max-width: 200px;
+}
+
+.footer_content h5 {
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.footer_content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer_content li {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.footer_content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer_content a:hover {
+  color: orange;
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1316px;
+  margin-top: 10px;
+}
+
+.footer_bottom_content > p {
+  color: #fff;
+  font-size: 10px;
+  width: 520px;
+}
+
+.footer_img {
+  margin-top: 7px;
+}
+
+.footer_img > a {
+  margin-right: 15px;
+}
+
+.footer_one {
+  width: 90px;
+}
+
+.footer_two {
+  width: 77px;
+}
+
+.footer_three {
+  width: 41px;
+}
+
+.footer_four {
+  width: 110px;
+}/*# sourceMappingURL=Footer.module.css.map */

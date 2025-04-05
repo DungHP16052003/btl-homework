@@ -1,0 +1,107 @@
+.wrapper {
+    position: relative;
+    display: inline-block;
+}
+.icon_user i{
+    position: absolute;
+    bottom: 19px;
+    left: 223px;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 30px;
+}
+.user_info {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 350px;
+    height: 700px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.user_level img{
+    width:  100px;
+    margin-top: -15px;
+    margin-bottom: 40px;
+}
+.promo_button a img{
+    width: 350px;
+    margin-bottom: 15px;
+}
+.account_line{
+    background-color: #f1f1f1;
+    padding: 5px 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    height: 200px;
+}
+.promote{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    img{
+        width:65px;
+    }
+}
+.time_line{
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 40px;
+}
+.time_line ::before{
+    content: "";
+    position: absolute;
+    bottom: 102%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #d9d9d9;
+    margin-bottom: 3px;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.active img{
+    width: 24px;
+    position: absolute;
+    top: 13%;
+    right: 318px;
+}
+.completed img{
+    position: absolute;
+    top: 13%;
+    width: 24px;
+    right: 216px;
+}
+.special img{
+    position: absolute;
+    width: 24px;
+    top: 13%;
+    right: 86px
+}
+.display img{
+  position: absolute;
+  top: 13%;
+  width: 24px;
+  left: 94%;
+}
+.membership{
+    color: rgba(0, 0, 0, .533);
+    display: block;
+    font-style: italic;
+}
+.account_content{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}

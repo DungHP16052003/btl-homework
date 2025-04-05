@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+}
+.wrapper a {
+  text-decoration: none;
+  color: #000;
+}
+.wrapper li {
+  list-style-type: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 32px;
+}
+
+nav ul li {
+  font-weight: 700;
+}/*# sourceMappingURL=Navigation.module.css.map */

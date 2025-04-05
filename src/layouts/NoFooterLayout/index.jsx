@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import Header from '../DefaultLayout/components/Header';
+import Footer from '../DefaultLayout/components/Footer';
 
 function NoFooterLayout() {
   return (
@@ -8,6 +9,7 @@ function NoFooterLayout() {
     <div>
       <Outlet/>
     </div>
+    <Footer/>
     </div>
   )
 }

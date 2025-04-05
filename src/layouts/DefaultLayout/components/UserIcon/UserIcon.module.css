@@ -1,0 +1,62 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.icon_user i {
+  position: absolute;
+  bottom: 19px;
+  left: 223px;
+  transform: translateY(-50%);
+  color: #000;
+  font-size: 30px;
+}
+
+.user_info {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 350px;
+  height: 500px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.user_level img {
+  width: 100px;
+  margin-top: -15px;
+  margin-bottom: 40px;
+}
+
+.promo_button a img {
+  width: 350px;
+}
+
+.account_line {
+  background-color: #ccc;
+  padding: 5px 5px;
+}
+
+.promote {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.promote img {
+  width: 65px;
+}/*# sourceMappingURL=UserIcon.module.css.map */

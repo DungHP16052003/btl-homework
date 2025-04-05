@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./Button.module.scss"
 import clsx from "clsx";
 import { href, Link } from "react-router-dom";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 function Button({
 
     children,
@@ -17,7 +17,7 @@ function Button({
     rounded = false,
     disabled = false,
     loading = false,
-    onClick,
+    // onClick,
 
 }) {
     let Component = "button";
@@ -33,7 +33,7 @@ function Button({
  const handleClick = () => {
     if (disabled || loading) return;
     // Logic...
-    onClick();
+    // onClick();
 };
 return (
     <Component
@@ -48,7 +48,7 @@ return (
         onClick={handleClick}
     >
         {loading ? (
-            <FontAwesomeIcon icon={faSpinner} spin />
+            <FontAwesomeIcon icon={faBook} spin />  
         ) : (
             <div>
                 {icon && <FontAwesomeIcon icon={icon} />}

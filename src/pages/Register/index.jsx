@@ -1,61 +1,76 @@
-import { useState } from "react";
 import styles from "./Register.module.scss";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import config from "@/config";
-import AuthService from "@/services/AuthService";
 import Button from "@/components/Button";
-function Register() {
-    const [params] = useSearchParams();
-    const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPassWordConFirmation] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [hasError, setHasError] = useState(false);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formValue = {
-        firstName,
-        lastName,
-        email,
-        password,
-        password_confirmation: passwordConfirmation,
-    };
-      console.log(formValue);
-    
-        try {
-          const data = await AuthService.postRegister(formValue);
-          localStorage.setItem("token", data.access_token);
-          navigate(params.get("continue") || config.routes.home);
-        } catch (error) {
-          console.log(error)
-          setHasError(true)
-        }
-       
-      
-    // fetch("https://api01.f8team.dev/api/auth/register", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-type": "application/json",
-    //       },
-    //     body: JSON.stringify(formValue)
-    // })
-    // .then((res) => {
-    //     if(!res.ok){
-    //         throw res;
-    //     }
-    //     return res.json();
-    // })
-    // .then((data) => {
-    //     localStorage.setItem("token", data.access_token);
-    //     navigate(params.get("continue") || config.routes.home);
-    // })
-    // .catch(() => {
-    //     setHasError(true);
-    // })
-  };
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import AuthService from "@/services/AuthService";
+import { useEffect } from "react";
+import useDebounce from "@/hooks/useDebounce";
 
+const registerSchema = yup
+  .object({
+    firstName: yup.string().required("Trường này là bắt buộc"),
+    lastName: yup.string().required("Trường này là bắt buộc"),
+    email: yup
+      .string()
+      .email("Vui lòng nhập đúng định dạng email")
+      .required("Trường này là bắt buộc"),
+    password: yup
+      .string()
+      .min(8, "Mật khẩu cần ít nhất 8 kí tự")
+      .required("Trường này là bắt buộc"),
+    password_confirmation: yup
+      .string()
+      .oneOf([yup.ref("password")], "Mật khẩu không khớp")
+      .required("Trường này là bắt buộc"),
+  })
+  .required();
+function Register() {
+  const [params] = useSearchParams();
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    trigger,
+    setError,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      password_confirmation: "",
+    },
+    resolver: yupResolver(registerSchema),
+  });
+  const emailValue = watch("email");
+  const debounceValue = useDebounce(emailValue, 600)
+  useEffect(() => {
+     if(!debounceValue) return;
+ const checkEmail =  async () => {
+      const isValid = await trigger("email")
+      if(isValid){
+        const exists = await AuthService.checkEmail(debounceValue);
+        if(exists){
+          setError("email", {
+            type: "manual",
+            message: "Email đã được sử dụng"
+          });
+        }
+      }
+    }
+    checkEmail();
+  }, [debounceValue, trigger, setError])
+  const onSubmit = async (data) => {
+    console.log(data);
+    const res = await AuthService.postRegister(data);
+    localStorage.setItem("token", res.access_token);
+    navigate(params.get("continue") || config.routes.home);
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
@@ -104,58 +119,45 @@ function Register() {
           </button>
         </div>
       </div>
-      <form className={styles.register_form} onSubmit={handleSubmit}>
-      <input
+      <form className={styles.register_form} onSubmit={handleSubmit(onSubmit)}>
+        <input
           type="text"
           name="firstName"
-          value={firstName}
           placeholder="firstName"
-          onChange={(e) => {
-            setFirstName(e.target.value);
-            setHasError(false);
-          }}
-        /><input
-        type="text"
-        name="lastName"
-        value={lastName}
-        placeholder="lastName"
-        onChange={(e) => {
-          setLastName(e.target.value);
-          setHasError(false);
-        }}
-      />
+          {...register("firstName")}
+        />
+        {errors.firstName && <span>{errors.firstName.message}</span>}
+        <input
+          type="text"
+          name="lastName"
+          placeholder="lastName"
+          {...register("lastName")}
+        />
+        {errors.lastName && <span>{errors.lastName.message}</span>}
         <input
           type="email"
           name="email"
-          value={email}
           placeholder="Email/SĐT của bạn"
-          onChange={(e) => {
-            setEmail(e.target.value);
-            setHasError(false);
-          }}
+          {...register("email")}
         />
+        {errors.email && <span>{errors.email.message}</span>}
+
         <input
           type="password"
           name="password"
-          value={password}
           placeholder="Mật khẩu"
-          onChange={(e) => {
-            setPassword(e.target.value);
-            setHasError(false);
-          }}
+          {...register("password")}
         />
-         <input
+        {errors.password && <span>{errors.password.message}</span>}
+        <input
           type="password"
           name="password_confirmation"
-          value={passwordConfirmation}
           placeholder="Nhập lại mật khẩu"
-          onChange={(e) => {
-            setPassWordConFirmation(e.target.value);
-            setHasError(false);
-          }}
+          {...register("password_confirmation")}
         />
+        {errors.password_confirmation && <span>{errors.password_confirmation.message}</span>}
+
         <Button large>ĐĂNG KÝ TÀI KHOẢN</Button>
-        {hasError && <p>Email này đã được sử dụng. Vui lòng sử dụng email khác </p>}
       </form>
       <div>
         <Link to={config.routes.login}>Đăng nhập</Link>

@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 1364px;
+  gap: 20px;
+}
+
+.banner img {
+  width: 655px;
+  border-radius: 14px;
+  transition: transform 0.3 ease;
+}
+
+.banner img:hover {
+  transform: translateY(-5PX);
+}/*# sourceMappingURL=Discount.module.css.map */

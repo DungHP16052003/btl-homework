@@ -1,0 +1,48 @@
+.wrapper {
+  width: 1448px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrapper li {
+  list-style: none;
+  transition: transform 0.3 ease;
+}
+.wrapper li:hover {
+  transform: translateY(-5px);
+  color: blue;
+}
+.wrapper ul {
+  display: flex;
+  gap: 15px;
+}
+.wrapper ul img {
+  width: 230px;
+}
+.wrapper p {
+  text-align: center;
+  font-weight: 700;
+}
+
+.button_type {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.button_type button {
+  padding: 15px 35px;
+  border-radius: 15px;
+  font-weight: 700;
+  color: #000;
+  border: none;
+  font-size: 18px;
+}
+
+.button_type button:hover {
+  color: #fff;
+  background-color: #000;
+}/*# sourceMappingURL=Category.module.css.map */

@@ -1,35 +1,32 @@
-import { useState } from "react";
 import styles from "./Login.module.scss";
-import { Link, useNavigate } from "react-router-dom";
 import config from "@/config";
-import useQuery from "@/hooks/useQuery";
-import AuthService from "@/services/AuthService";
-import httpRequest from "@/utils/httpRequest";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "@/components/Button";
+import { Link, useNavigate } from "react-router-dom";
+import AuthService from "@/services/AuthService";
+import loginSchema from "@/Shema/loginSchema";
+import httpRequest from "@/utils/httpRequest";
+import useQuery from "@/hooks/useQuery";
+
 function Login() {
   const query = useQuery();
   const navigate = useNavigate();
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [hasError, setHasError] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = {
-      email,
-      password,
-    };
-    console.log(formData);
-
-   try {
-     const data = await AuthService.postLogin(formData);
-     httpRequest.setToken(data.access_token)
-     navigate(query.get("continue") || config.routes.home)
-   } catch (error) {
-       console.log(error);
-       setHasError(true);
-   }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+    resolver: yupResolver(loginSchema),
+  });
+  const onSubmit = async (data) => {
+    const res = await AuthService.postLogin(data);
+     httpRequest.setToken(res.access_token);
+    navigate(query.get("continue") || config.routes.home)
   };
   return (
     <div className={styles.wrapper}>
@@ -79,29 +76,24 @@ function Login() {
           </button>
         </div>
       </div>
-      <form className={styles.login_form} onSubmit={handleSubmit}>
+      <form className={styles.login_form} onSubmit={handleSubmit(onSubmit)}>
         <input
           type="email"
           name="email"
-          value={email}
           placeholder="Email/SĐT của bạn"
-          onChange={(e) => {
-            setEmail(e.target.value);
-            setHasError(false);
-          }}
+          {...register("email")}
         />
+        {errors.email && <span>{errors.email.message}</span>}
+
         <input
           type="password"
           name="password"
-          value={password}
           placeholder="Mật khẩu"
-          onChange={(e) => {
-            setPassword(e.target.value);
-            setHasError(false);
-          }}
+          {...register("password")}
         />
-          <Button large>ĐĂNG NHẬP</Button>
-        {hasError && <p>Email va mat khau khong hop le</p>}
+        {errors.password && <span>{errors.password.message}</span>}
+
+        <Button large>ĐĂNG NHẬP</Button>
       </form>
       <div>
         <Link to={config.routes.register}>Đăng ký</Link>
