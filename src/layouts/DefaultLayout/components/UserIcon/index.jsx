@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./UserIcon.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faDollar } from "@fortawesome/free-solid-svg-icons";
 
 function UserIcon() {
   const user = useUser();
@@ -35,7 +35,7 @@ function UserIcon() {
         <div className={`${styles.user_info} ${styles.show}`}>
           <div className={styles.user_admin}>
             <div className={styles.user_information}>
-              <h1>Hi, {user.firstName + ' ' + user.lastName} </h1>
+              <h1>Hi, {user.firstName + " " + user.lastName} </h1>
             </div>
 
             <div className={styles.user_level}>
@@ -102,19 +102,42 @@ function UserIcon() {
             </div>
             <div className={styles.account_content}>
               <div className={styles.coolcash_box}>
-                <p>Bạn đang có</p>
+                <p className={styles.you}>Bạn đang có</p>
                 <p className={styles.balance}>
-                  <span>💲</span> 0 Coolcash
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faDollar}
+                      className={styles.dollar}
+                    />
+                    <b>0 Coolcash</b>
+                  </span>{" "}
                 </p>
                 <p>Chờ: 0 Coolcash</p>
               </div>
               <div className={styles.coolclub_box}>
                 <p>Về</p>
                 <p>CoolClub</p>
-                <FontAwesomeIcon icon={faArrowAltCircleRight} />
+                <FontAwesomeIcon icon={faArrowRight} className={styles.arrow} />
               </div>
             </div>
-            <div>
+            <div className={styles.referFriend}>
+              <img
+                src="https://mcdn.coolmate.me/image/September2024/mceclip1.png"
+                alt=""
+              />
+              <div className={styles.refer_content}>
+                <h3>Giới thiệu bạn bè</h3>
+                <p>
+                  Nhận 10% giá trị đơn hàng đầu tiên của bạn bè được quy đổi
+                  thành CoolCash
+                </p>
+              </div>
+              <div className={styles.button_refer}>
+                 <button className={styles.share}>chia sẻ</button>
+                 <button className={styles.find}>Tìm hiểu thêm</button>
+              </div>
+            </div>
+            <div className={styles.button_account}>
               <Link to={`/p/${user.username}`}>
                 <button>
                   <p>Đi đến tài khoản</p>

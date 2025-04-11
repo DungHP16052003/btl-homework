@@ -1,0 +1,26 @@
+.wrapper{
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+    ul{
+        display: flex;
+        align-items: center;
+         justify-content: space-around;
+         img{
+            border-radius: 8px;
+         }
+    }
+}
+
+.dailyWearProduct img {
+    width: 1577px;
+    margin-top: 45px;
+}
+.runningWearProduct img{
+    width: 1577px;
+    margin-top: 45px;
+}

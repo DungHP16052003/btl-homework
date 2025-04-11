@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Category from "./components/Category";
 import Discount from "./components/Discount";
 import { Outlet } from "react-router-dom";
+import Care from "./components/Care";
 
 function DefaultLayout() {
   return (
@@ -14,8 +15,9 @@ function DefaultLayout() {
       <Category/>
       <Discount/>
       <div>
-        <Outlet/>
+        <Outlet/> 
       </div>
+      <Care/>
       <Footer/>
     </div>
   );

@@ -39,8 +39,7 @@
     background-color: #fff;
     margin: auto;
   }
-  
-  .login_form input {
+  .email{
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -48,7 +47,14 @@
     border-radius: 4px;
     font-size: 16px;
   }
-  
+  .password{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
   .Login_button {
     width: 104%;
     padding: 10px;

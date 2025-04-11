@@ -1,41 +1,61 @@
-import useDebounce from "@/hooks/useDebounce"
-import useUser from "@/hooks/useUser";
-import {  useEffect, useState } from "react"
-
+import Accordion from "@/components/Accordion/Accordion";
+import AccordionItem from "@/components/Accordion/AccordionItem";
+import Tabs, { Tab } from "@/components/Tabs";
 
 function Home2() {
-  const user = useUser()
-    const [searchValue, setSearchValue] = useState("");
-    const [avatar, setAvatar] = useState(null);
-    const [preview, setPreview] = useState(null);
-    const debounceValue = useDebounce(searchValue, 800 )
-    console.log(user);
-    
-    useEffect(() => {
-     if(debounceValue){
-        console.log(`call API ${debounceValue}`);
-        
-     }
-    }, [debounceValue])
-    useEffect(() => {
-      return () => URL.revokeObjectURL(preview)
-    }, [preview])
+  // const ulElement = React.createElement(
+  //   "ul",
+  //   {
+  //     className: "course-list",
+  //   },
+  //   React.createElement(
+  //     "li",
+  //     {
+  //       className: "course-item",
+  //     },
+  //     React.createElement("a", { href: "/courses/1" }, "HTML, CSS")
+  //   ),
+  //   React.createElement(
+  //     "li",
+  //     {
+  //       className: "course-item"
+  //     },
+  //     React.createElement("a", { href: "/courses/2" }, "php, js")
+  //   ),
+  //   React.createElement(
+  //     "li",
+  //     {
+  //       className: "course-item",
+  //     },
+  //     React.createElement("a", { href: "/courses/3" }, "HTML, CSS")
+  //   )
+  // )
   return (
     <div>
-      <div>{user && <p>xin chào, {user.firstName}</p> }</div>
-      <input type="text" value={searchValue} onChange={(e) => {
-         setSearchValue(e.target.value)
-      }} />
-      <h1>Change img</h1>
-      <img src={preview} alt="" />
-      <input type="file" accept="*/image" onChange={(e) => {
-        const file = e.target.files[0];
-        setAvatar(file);
-        const previewUrl = URL.createObjectURL(file);
-        setPreview(previewUrl);
-      }} />
+      <Tabs defaultIndex={0} onChange={(index) => console.log(index)}>
+        <Tab title="Tab1">Content of tab1</Tab>
+        <Tab title="Tab2">Content of tab2</Tab>
+        <Tab title="Tab3">Content of tab3</Tab>
+        <Tab title="Tab4">Content of tab4</Tab>
+        <Tab title="Tab5">Content of tab5</Tab>
+        <Tab title="Tab6">Content of tab6</Tab>
+      </Tabs>
+      <Accordion
+        defaultIndex={0}
+        onChange={(index) => console.log(index)}
+        collapseOthers={true} // Chỉ mở 1 mục cùng lúc
+      >
+        <AccordionItem header="Accordion 1">
+          Nội dung của Accordion 1
+        </AccordionItem>
+        <AccordionItem header="Accordion 2">
+          Nội dung của Accordion 2
+        </AccordionItem>
+        <AccordionItem header="Accordion 3">
+          Nội dung của Accordion 3
+        </AccordionItem>
+      </Accordion>
     </div>
-  )
+  );
 }
-
-export default Home2
+export default Home2;

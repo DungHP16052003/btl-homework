@@ -19,7 +19,7 @@
     border-radius: 8px;
     padding: 10px;
     width: 350px;
-    height: 700px;
+    height: 824px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -104,4 +104,117 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    margin-bottom: 13px;
+    
+}
+.coolcash_box{
+    background-color: #f1f1f1;
+    width: 186px;
+    height: 113px;
+    padding: 5px 5px;
+    border-radius: 8px;
+}
+.you{
+    margin-bottom: -17px;
+    color: rgba(0, 0, 0, 0.533);
+    font-size: 20px;
+}
+.balance {
+    margin-bottom: -17px;
+    b{
+    font-size: 20px;
+    color: #000;
+}
+.dollar {
+    color: #fff;
+    border-radius: 8px;
+    background-color: #000;
+}
+}
+.coolcash_box p{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.533);
+}
+.coolclub_box{
+    background-color: #000;
+    border-radius: 8px;
+    height: 113px;
+    width: 124px;
+    display: flex;          
+  flex-direction: column;  
+  align-items: center;     
+  justify-content: center; 
+
+  padding: 10px;            
+  gap: 4px;               
+
+  p {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;             
+  }
+
+  .arrow {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 4px;       
+  }
+}
+
+
+.button_account {
+    button{
+        width: 350px;
+    background-color: blue;
+    border: none;
+    border-radius: 8px;
+    }
+    p{
+        color: #fff;
+        font-size: 20px;
+    }
+}
+.referFriend{
+    img{
+    width: 350px;
+    height: 166px;
+    }
+    position: relative;
+    p{
+        position: absolute;
+    top: 25%;
+    left: 5%;
+    color: #fff;
+    }
+}
+.referFriend h3{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    font-weight: 400;
+    color: #fff;
+    font-size: 25px;
+}
+.share {
+     left: 5%;
+    top: 64%;
+    position: absolute;
+    padding: 12px 20px;
+    border-radius: 20px;
+    border: none;
+    color: #000;
+    font-size: 18px;
+    background-color: #fff;
+}
+.find{
+   position: absolute;
+    top: 64%;
+    left: 38%;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px fff;
+    font-size: 18px;
+    border: 1px solid #fff;
 }

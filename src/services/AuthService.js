@@ -2,6 +2,8 @@ import httpRequest from "../utils/httpRequest";
 
 export const getCurrentUser = async () => {
     const res = await httpRequest.get("/auth/me");
+    console.log(res.data);
+    
     return res.data;
 };
 

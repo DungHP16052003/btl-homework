@@ -4,29 +4,10 @@ import config from "@/config";
 import Button from "@/components/Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import AuthService from "@/services/AuthService";
 import { useEffect } from "react";
 import useDebounce from "@/hooks/useDebounce";
-
-const registerSchema = yup
-  .object({
-    firstName: yup.string().required("Trường này là bắt buộc"),
-    lastName: yup.string().required("Trường này là bắt buộc"),
-    email: yup
-      .string()
-      .email("Vui lòng nhập đúng định dạng email")
-      .required("Trường này là bắt buộc"),
-    password: yup
-      .string()
-      .min(8, "Mật khẩu cần ít nhất 8 kí tự")
-      .required("Trường này là bắt buộc"),
-    password_confirmation: yup
-      .string()
-      .oneOf([yup.ref("password")], "Mật khẩu không khớp")
-      .required("Trường này là bắt buộc"),
-  })
-  .required();
+import registerSchema from "@/Shema/registerShema";
 function Register() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
@@ -66,10 +47,20 @@ function Register() {
     checkEmail();
   }, [debounceValue, trigger, setError])
   const onSubmit = async (data) => {
-    console.log(data);
-    const res = await AuthService.postRegister(data);
-    localStorage.setItem("token", res.access_token);
-    navigate(params.get("continue") || config.routes.home);
+    try {
+      console.log(data);
+      const res = await AuthService.postRegister(data);
+      localStorage.setItem("token", res.access_token);
+      navigate(params.get("continue") || config.routes.home);
+    } catch (error){
+      console.log(error);
+      
+        setError("password", {
+          type: "manual",
+          message: "Tài khoản và mật khẩu không hợp lệ"
+        })
+    }
+   
   };
   return (
     <div className={styles.wrapper}>
