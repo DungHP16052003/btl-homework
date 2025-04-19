@@ -1,0 +1,63 @@
+.recruitment_culture{
+    background-color: #000;
+    height: 1271px;
+    width: 1577px;
+    margin-bottom: 500px;
+}
+.culture_content{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 1281px;
+}
+.culture_text{
+    margin-top: 93px;
+    line-height: 0.01;
+        h2{
+        color: #fff;
+        font-weight: 700;
+        font-size: 50px;
+    text-transform: uppercase;
+    }
+    p{
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 500;
+        width: 537px;
+    }
+}
+
+
+.culture_img img{
+    width: 636px;
+    height: 339px;
+    margin-top: 69px;
+    margin-right: -63px;
+}
+.recruitment_image img{
+    display: flex
+;
+    margin: auto;
+    width: 1280px;
+    height: 720px;
+    justify-content: space-around;
+}
+.recruitment_cta{
+    display: flex;
+    justify-content: center;
+    margin-top: 13px;
+}
+.recruitment_cta a{
+    background-color: #fff;
+    border: 2px solo;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 15px 25px;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}

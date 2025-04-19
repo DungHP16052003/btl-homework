@@ -11,7 +11,10 @@ const config = {
      //Products
      products: "/products",
      product: "/products/:slug",
-
+     //RecruitmentJobs
+     recruitment: "/recruitment",
+     recruitmentStory: "/recruitmentStory",
+     RecruitmentExcellent:"/RecruitmentExcellent",
     //Users
     users:"/users",
      notfound: "*",

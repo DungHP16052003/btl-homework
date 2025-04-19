@@ -10,13 +10,13 @@ import {
   checkUsername,
 } from "@/services/AuthService";
 import { useNavigate } from "react-router-dom";
-import useUser from "@/hooks/useUser";
 import useDebounce from "@/hooks/useDebounce";
 import EditSchema from "@/Shema/EditSchema";
+import { useSelector } from "react-redux";
 
 
 function EditProfile() {
-   const user = useUser();
+ const currentUser = useSelector((state) => state.auth.currentUser)
    const navigate = useNavigate();
    const[isSubmitting, setIsSubmitTing] = useState(false);
    
@@ -30,30 +30,30 @@ function EditProfile() {
       formState : {errors},
    } = useForm({
       resolver : yupResolver(EditSchema),
-      defaultValues : user || {},
+      defaultValues : currentUser || {},
    })
 
    useEffect(() => {
-     if(user){
+     if(currentUser){
       reset({
-        firstName : user.firstName || "",
-        lastName : user.lastName || "",
-        age : user.age || "",
-        email : user.email || "",
-        username : user.username || "",
-        gender : user.gender || "male",
-        phone : user.phone || "",
-        birthDate : user.birthDate || "",
+        firstName : currentUser.firstName || "",
+        lastName : currentUser.lastName || "",
+        age : currentUser.age || "",
+        email : currentUser.email || "",
+        username : currentUser.username || "",
+        gender : currentUser.gender || "male",
+        phone : currentUser.phone || "",
+        birthDate : currentUser.birthDate || "",
       })
      }
-   }, [user, reset])
+   }, [currentUser, reset])
 
    const onSubmit = async (data) => {
        setIsSubmitTing(true);
        try {
-         await editProfile(user?.id, data);
+         await editProfile(currentUser?.id, data);
          toast.success("Cập nhật thành công");
-         navigate(`/p/${user.username}`)
+         navigate(`/p/${currentUser.username}`)
        } catch (error) {
           console.log(error);
           toast.error("Cập nhật thất bại");
@@ -70,11 +70,11 @@ function EditProfile() {
    const debounceUser = useDebounce(UserNameValue, 600)
 
   useEffect(() => {
-    if(!debounceEmail || debounceEmail === user?.email) return;
+    if(!debounceEmail || debounceEmail === currentUser?.email) return;
       const check = async () => {
         const isValid = await trigger("email");
         if(isValid){
-          const exists = await checkEmail(debounceEmail, user?.id);
+          const exists = await checkEmail(debounceEmail, currentUser?.id);
           if(exists){
             setError("email", {
               type:"manual",
@@ -85,14 +85,14 @@ function EditProfile() {
       }
     
     check();
-  },[debounceEmail, trigger,setError, user])
+  },[debounceEmail, trigger,setError, currentUser])
   
   useEffect(() => {
-    if(!debouncePhone || debouncePhone === user?.phone) return;
+    if(!debouncePhone || debouncePhone === currentUser?.phone) return;
       const check = async () => {
         const isValid = await trigger("phone") 
         if(isValid){
-          const exists = await checkPhone(debouncePhone, user?.id);
+          const exists = await checkPhone(debouncePhone, currentUser?.id);
           if(exists){
             setError("phone", {
               type: "manual",
@@ -103,13 +103,13 @@ function EditProfile() {
       }
     
     check();
-  },[debouncePhone, trigger, setError, user]);
+  },[debouncePhone, trigger, setError, currentUser]);
   useEffect(() => {
-    if(!debounceUser || debounceUser === user?.username) return;
+    if(!debounceUser || debounceUser === currentUser?.username) return;
       const check = async () => {
         const isValid = await trigger("username") 
         if(isValid){
-          const exists = await checkUsername(debounceUser, user?.id);
+          const exists = await checkUsername(debounceUser, currentUser?.id);
           if(exists){
             setError("username", {
               type: "manual",
@@ -120,7 +120,7 @@ function EditProfile() {
       }
     
     check();
-  },[debounceUser, trigger, setError, user]);
+  },[debounceUser, trigger, setError, currentUser]);
   return (
     <div className={styles.wrapper}>
       <h1>Cập nhật tài khoản</h1>

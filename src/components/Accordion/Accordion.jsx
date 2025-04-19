@@ -62,7 +62,7 @@ function Accordion({ children, defaultIndex = 0, onChange, collapseOthers = true
             >
               {item.props.header}
             </button>
-            
+          
             {isOpen && (
               <div className="accordion-content">
                 {item.props.children}

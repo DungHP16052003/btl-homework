@@ -1,12 +1,12 @@
-import useUser from "@/hooks/useUser";
 import { useState } from "react";
 import styles from "./UserIcon.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faDollar } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 function UserIcon() {
-  const user = useUser();
+  // const user = useUser();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -16,13 +16,14 @@ function UserIcon() {
 
   const toggleLogin = (e) => {
     e.preventDefault();
-    if (user) {
+    if (currentUser) {
       setIsOpen((prev) => !prev);
     } else {
       handleLogin();
     }
   };
 
+ const currentUser = useSelector((state) => state.auth.currentUser)
   return (
     <div className={styles.wrapper}>
       <div className={styles.icon_user}>
@@ -31,11 +32,11 @@ function UserIcon() {
         </div>
       </div>
 
-      {user && isOpen && (
+      {currentUser && isOpen && (
         <div className={`${styles.user_info} ${styles.show}`}>
           <div className={styles.user_admin}>
             <div className={styles.user_information}>
-              <h1>Hi, {user.firstName + " " + user.lastName} </h1>
+              <h1>Hi, {currentUser.firstName + " " + currentUser.lastName} </h1>
             </div>
 
             <div className={styles.user_level}>
@@ -138,7 +139,7 @@ function UserIcon() {
               </div>
             </div>
             <div className={styles.button_account}>
-              <Link to={`/p/${user.username}`}>
+              <Link to={`/p/${currentUser.username}`}>
                 <button>
                   <p>Đi đến tài khoản</p>
                 </button>

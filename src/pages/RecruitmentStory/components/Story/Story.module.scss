@@ -1,0 +1,34 @@
+.recruitment_story {
+    background-color: #f1f1f1;
+    height: 650px;
+    width: 1577px;
+  }
+.story_content{
+    margin: auto;
+    width: 1281px;
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
+
+}
+.story_text{
+ h2{
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 50px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+}
+.story_description p{
+    margin: 0;
+}
+.story_description{
+    line-height: 1.5em;
+  
+}
+.story_img img{
+    width: 523px;
+    height: 550px;
+    border-radius: 16px;
+}

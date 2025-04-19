@@ -11,6 +11,9 @@ import Profile from "@/pages/Profile";
 import Home2 from "@/pages/Home2";
 import NoFooterLayout from "@/layouts/NoFooterLayout";
 import EditProfile from "@/pages/Profile/Component/EditProfile";
+import RecruitmentJobs from "@/pages/RecruitmentJobs";
+import RecruitmentStory from "@/pages/RecruitmentStory";
+import RecruitmentExcellent from "@/pages/RecruitmentExcellent/component";
 
 
 
@@ -59,6 +62,24 @@ const routes = [
         path: config.routes.product,
         component: ProductDetail,
         layout:null,
+    },
+    {
+        path: config.routes.recruitment,
+        component: RecruitmentJobs,
+        layout:NoFooterLayout,
+
+    },
+    {
+        path: config.routes.recruitmentStory,
+        component: RecruitmentStory ,
+        layout:NoFooterLayout,
+
+    },
+    {
+        path: config.routes.RecruitmentExcellent,
+        component: RecruitmentExcellent ,
+        layout:NoFooterLayout,
+
     },
     //Users
     {

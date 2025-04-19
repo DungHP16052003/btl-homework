@@ -1,7 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import config from "@/config";
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
+import config from "@/config";
 
 function Footer() {
   return (
@@ -90,7 +89,7 @@ function Footer() {
           <h5>TÀI LIỆU TUYỂN DỤNG</h5>
           <ul>
             <li>
-              <a href="#">Tuyển dụng</a>
+              <Link to={config.routes.recruitment}><a href="">Tuyển dụng</a></Link>
             </li>
             <li>
               <a href="#">Đăng ký bản quyền</a>
