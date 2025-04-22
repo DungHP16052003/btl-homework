@@ -17,7 +17,7 @@ const runningWearProduct = products.filter(product => product.category === "runn
   return (
     <div className={styles.wrapper}>
        <section className= {styles.dailyWearProduct}>
-               <img src="https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/April2025/Casual_-_Desktozap.jpg" alt="" />
+               <img src="https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/April2025/Casual_-_Desktopsds.jpg" alt="Áo thun nam" /> 
                <h1>SẢN PHẨM MẶC HẰNG NGÀY</h1>
             </section>
       <ul>
@@ -37,8 +37,7 @@ const runningWearProduct = products.filter(product => product.category === "runn
           ))}
       </ul>
        <section className= {styles.runningWearProduct}>
-              <img src="https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/April2025/Running_-_Deszaktop.jpg" alt="" />
-              <h1>SẢN PHẨM CHẠY BỘ</h1>
+              <img src="https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/April2025/Running_-_Desktopz1.jpg" alt="Áo thun nam" /> 
             </section >
       <ul>
         {Array.isArray(products) &&

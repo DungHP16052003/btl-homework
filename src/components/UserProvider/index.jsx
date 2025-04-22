@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import {actions as authActions} from "@/reducers/auth"
+import { getCurrentUser } from '@/features/auth/authAsync';
 function UserProvider() {
     const dispatch = useDispatch();
   useEffect(() => {
-     dispatch(authActions.getCurrentUser())
+     dispatch(getCurrentUser())
   }, [dispatch])
   return null;
 

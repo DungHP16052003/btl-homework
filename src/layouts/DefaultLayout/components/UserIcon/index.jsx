@@ -6,7 +6,6 @@ import { faArrowRight, faDollar } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 
 function UserIcon() {
-  // const user = useUser();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 

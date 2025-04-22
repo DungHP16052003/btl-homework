@@ -1,4 +1,5 @@
 import Banner from "./Banner"
+import Information from "./Information"
 import Services from "./Services"
 
 function RecruitmentExcellent() {
@@ -6,6 +7,7 @@ function RecruitmentExcellent() {
     <div>
       <Banner/>
       <Services/>
+      <Information/>
     </div>
   )
 }

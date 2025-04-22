@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import styles from "./Slides.module.scss"
 
 const slideData = [
   {
-    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/March2025/Hero_Banner_-_Desktopsdd.jpg",
+    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/April2025/Hero_Banner_-_Desktopzz.jpg",
     
 },
 {
-    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/March2025/Hero_Banner_-_Desktop_nu.jpg",
+    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/April2025/Hero_Banner_-_Desktopza.jpg",
   
 },
 {
-    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/March2025/Hero_Banner_-_Desktoprun.jpg",
+    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/April2025/Hero_-_Desktop_(1)_3.jpg",
     
 },
 {
@@ -36,9 +36,9 @@ const prev = () =>{
   return (
     <div className={styles.wrapper}>
     <div className={styles.Slides}>
-       <a onClick={prev} className={styles.prev}><i class='bx bx-chevron-left'></i></a>
+       <a onClick={prev} className={styles.prev}><i className='bx bx-chevron-left'></i></a>
        <img src={slideData[currentIndex].image} alt={`Slide ${currentIndex + 1} `} />
-        <a onClick={next} className={styles.next}><i class='bx bx-chevron-right'></i></a>
+        <a onClick={next} className={styles.next}><i className='bx bx-chevron-right'></i></a>
     </div> 
     </div>
   );

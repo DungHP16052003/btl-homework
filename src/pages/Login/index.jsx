@@ -7,6 +7,8 @@ import httpRequest from "@/utils/httpRequest";
 import useQuery from "@/hooks/useQuery";
 import Form ,{ TextInput } from "@/components/Forms";
 import loginSchema from "@/Shema/loginSchema";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 function Login() {
   const query = useQuery();
@@ -17,6 +19,16 @@ function Login() {
     httpRequest.setToken(res.access_token);
     navigate(query.get("continue") || config.routes.home);
   };
+  const err = useSelector((state) => state.auth.error);
+
+  useEffect(() => {
+    if (err) {
+        if (err === "Unauthenticated") {
+            localStorage.removeItem("token");
+            window.top.location.href = "http://localhost:5173/";
+        }
+    }
+}, [err]);
   return (
     <div className={styles.wrapper}>
       <div className={styles.logo}>

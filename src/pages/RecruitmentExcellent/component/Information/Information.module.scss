@@ -1,0 +1,84 @@
+.information {
+  padding-bottom: 10px;
+  background-color: #f1f1f1;
+  padding-top: 10px;
+}
+.service_inFor {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 1371px;
+  margin-left: auto;
+    margin-right: auto;
+}
+.information_content{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 100px 0;
+   
+    
+}
+.information_title{
+    margin-bottom: -26px;
+}
+.information_title h2 {
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: "CriteriaCF";
+    width: 427px;
+}
+.information_description{
+    font-size: 16px;
+    line-height: 1.5em;
+    max-width: 650px;
+}
+.information_description p {
+    margin: 0;
+}
+.information_description span{
+    color: #DEDEDE;
+    font-weight: 900;
+    font-size: 10rem;
+    line-height: 170px;
+    float: right;
+    font-family: "CriteriaCF";
+}
+.service_img img{
+    
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0px;
+        left: 55%;
+        z-index: 1;
+        background-color: rgb(255, 255, 255);
+        border-radius: 1000px;
+        transform: translate3d(-50%, -50%, 0px);
+    
+}
+
+
+.information_img img{
+    position: absolute;
+    width: 576px;
+    height: 473px;
+    border-radius: 30px;
+    bottom: -9%;
+    right: 3%;
+}
+
+
+.information_content_2{
+    display: flex;
+    align-items: center;
+    margin: 100px 0;
+    justify-content: space-around;
+}
+.information_img2 img{
+    width: 620px;
+    height: 501px;
+    border-radius: 30px;
+}
