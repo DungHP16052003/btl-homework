@@ -1,13 +1,12 @@
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { getCurrentUser } from '@/features/auth/authAsync';
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getUser } from "@/features/auth/authAsync";
 function UserProvider() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
-     dispatch(getCurrentUser())
-  }, [dispatch])
+    dispatch(getUser());
+  }, [dispatch]);
   return null;
-
 }
 
-export default UserProvider
+export default UserProvider;

@@ -5,7 +5,6 @@ import UserProvider from './components/UserProvider';
 
 
 function App() {
-  
   return (
     <Router>
       <ScrollTop/>

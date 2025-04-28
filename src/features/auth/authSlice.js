@@ -1,26 +1,45 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCurrentUser } from "./authAsync";
-
+import { getUser, postLogin, postRegister } from "./authAsync";
 
 const initialState = {
-    currentUser: null,
-  err:null
+  currentUser: null,
+  token: null,
+  error: null,
 };
-export const authSlice = createSlice({
+
+const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setCurrentUser(state, action) {
-      state.currentUser = action.payload;
+    logout(state) {
+      state.currentUser = null;
+      state.token = null;
+      state.error = null;
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getCurrentUser.fulfilled, (state, action)=> {
+    builder
+      .addCase(postLogin.fulfilled, (state, action) => {
+        state.error = null;
+      })
+      .addCase(postLogin.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(postRegister.fulfilled, (state, action) => {
         state.currentUser = action.payload;
-
-
-    })
-  }
+        state.error = null;
+      })
+      .addCase(postRegister.rejected, (state, action) => {
+        state.error = action;
+      })
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.currentUser = action.payload;
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.error = action.payload;
+      });
+  },
 });
-export const { setCurrentUser } = authSlice.actions;
+
+export const { logout } = authSlice.actions;
 export default authSlice.reducer;

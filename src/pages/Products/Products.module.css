@@ -1,1 +1,25 @@
-/*# sourceMappingURL=Products.module.css.map */
+.wrapper li {
+  list-style: none;
+}
+.wrapper a {
+  text-decoration: none;
+  color: #000;
+}
+.wrapper ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.wrapper ul img {
+  border-radius: 8px;
+}
+
+.dailyWearProduct img {
+  width: 1577px;
+  margin-top: 45px;
+}
+
+.runningWearProduct img {
+  width: 1577px;
+  margin-top: 45px;
+}/*# sourceMappingURL=Products.module.css.map */

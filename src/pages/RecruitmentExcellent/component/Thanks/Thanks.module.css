@@ -1,0 +1,31 @@
+.thanks {
+  position: relative;
+}
+
+.thanks_img img {
+  width: 1577px;
+  height: 660px;
+}
+
+.thanks_content {
+  position: absolute;
+  z-index: 2;
+  border-radius: 30px;
+  text-align: center;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.thanks_content h2 {
+  font-size: 4rem;
+  font-weight: 600;
+  font-family: "CriteriaCF";
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.thanks_description p {
+  font-size: 24px;
+  font-weight: 400;
+}/*# sourceMappingURL=Thanks.module.css.map */

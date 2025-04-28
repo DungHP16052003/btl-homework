@@ -78,53 +78,95 @@ function Footer() {
         <div className={styles.footer_content}>
           <h5>COOLCLUB</h5>
           <ul>
-            <li><a href="#">Đăng kí thành viên</a></li>
-            <li><a href="#">Ưu đãi & Đặc quyền</a></li>
+            <li>
+              <a href="#">Đăng kí thành viên</a>
+            </li>
+            <li>
+              <a href="#">Ưu đãi & Đặc quyền</a>
+            </li>
           </ul>
           <h5>TÀI LIỆU TUYỂN DỤNG</h5>
           <ul>
-            <li><Link to={config.routes.recruitment}>Tuyển dụng</Link></li>
-            <li><a href="#">Đăng ký bản quyền</a></li>
+            <li>
+              <Link to={config.routes.recruitment}>Tuyển dụng</Link>
+            </li>
+            <li>
+              <a href="http://online.gov.vn/(X(1)S(sgmttobbtsiaq3l5itoicxhw))/Home/WebDetails/53184?AspxAutoDetectCookieSupport=1">
+                Đăng ký bản quyền
+              </a>
+            </li>
           </ul>
         </div>
 
         <div className={styles.footer_content}>
           <h5>Chính sách</h5>
           <ul>
-            <li><a href="#">Chính sách đổi trả 60 ngày</a></li>
-            <li><a href="#">Chính sách khuyến mãi</a></li>
-            <li><a href="#">Chính sách bảo mật</a></li>
-            <li><a href="#">Chính sách giao hàng</a></li>
+            <li>
+              <a href="#">Chính sách đổi trả 60 ngày</a>
+            </li>
+            <li>
+              <a href="#">Chính sách khuyến mãi</a>
+            </li>
+            <li>
+              <a href="#">Chính sách bảo mật</a>
+            </li>
+            <li>
+              <a href="#">Chính sách giao hàng</a>
+            </li>
           </ul>
           <h5>Coolmate.me</h5>
           <ul>
-            <li><a href="">Lịch sử thay đôi website</a></li>
+            <li>
+              <a href="">Lịch sử thay đôi website</a>
+            </li>
           </ul>
         </div>
 
         <div className={styles.footer_content}>
           <h5>Chăm sóc khách hàng</h5>
           <ul>
-            <li><a href="#">Trải nghiệm mua sắm 100% hài lòng</a></li>
-            <li><a href="#">Hỏi đáp - FAQs</a></li>
+            <li>
+              <a href="#">Trải nghiệm mua sắm 100% hài lòng</a>
+            </li>
+            <li>
+              <a href="#">Hỏi đáp - FAQs</a>
+            </li>
           </ul>
           <h5>KIẾN THỨC MẶC ĐẸP</h5>
           <ul>
-            <li><a href="#">Hướng dẫn chọn size</a></li>
-            <li><a href="#">Blog</a></li>
+            <li>
+              <a href="#">Hướng dẫn chọn size</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
           </ul>
         </div>
 
         <div className={styles.footer_content}>
           <h5>Về COOLMATE</h5>
           <ul>
-            <li><a href="#">Quy tắc ứng xử của Coolmate</a></li>
-            <li><a href="#">Coolmate 101</a></li>
-            <li><a href="#">DVKH xuất sắc</a></li>
-            <li><a href="#">Câu chuyện về Coolmate</a></li>
-            <li><a href="#">Nhà máy</a></li>
-            <li><a href="#">Care & Share</a></li>
-            <li><a href="#">Cam kết bền vững</a></li>
+            <li>
+              <a href="#">Quy tắc ứng xử của Coolmate</a>
+            </li>
+            <li>
+              <a href="#">Coolmate 101</a>
+            </li>
+            <li>
+              <a href="#">DVKH xuất sắc</a>
+            </li>
+            <li>
+              <a href="#">Câu chuyện về Coolmate</a>
+            </li>
+            <li>
+              <a href="#">Nhà máy</a>
+            </li>
+            <li>
+              <a href="#">Care & Share</a>
+            </li>
+            <li>
+              <a href="#">Cam kết bền vững</a>
+            </li>
           </ul>
         </div>
 

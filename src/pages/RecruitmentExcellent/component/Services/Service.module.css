@@ -1,0 +1,59 @@
+.service {
+  background-color: #f1f1f1;
+  width: 1577px;
+}
+
+.content {
+  padding-top: 100px;
+}
+
+.service_text h2 {
+  font-family: "CriteriaCF";
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 24rem;
+  margin-bottom: 2rem;
+}
+
+.service_description {
+  position: relative;
+  padding: 50px;
+  background: #2F5ACF;
+  border-radius: 1.5rem;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description_inner {
+  position: relative;
+  z-index: 1;
+}
+
+.description_inner::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 20% top;
+  background-image: url(https://mcdn.coolmate.me/image/October2023/mceclip0_68.png);
+  top: -50px;
+  left: 0;
+}
+
+.service_content {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 0 3rem;
+}
+
+.service_content p {
+  margin: 0;
+}/*# sourceMappingURL=Service.module.css.map */

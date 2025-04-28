@@ -11,11 +11,11 @@ const slideData = [
   
 },
 {
-    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/April2025/Hero_-_Desktop_(1)_3.jpg",
+    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/April2025/1920x788_desktop.jpg",
     
 },
 {
-    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/March2025/Hero_Banner_-_Desktopgym.jpg",
+    image: "https://media3.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/April2025/Hero_-_Desktopzzaz.jpg",
    
 },
 ]

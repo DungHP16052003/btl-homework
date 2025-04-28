@@ -1,0 +1,37 @@
+.recruitment_about {
+  background-color: #f1f1f1;
+  height: 895px;
+  width: 1577px;
+}
+
+.recruitment_content {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 1281px;
+}
+
+.recruitment_inFor {
+  margin-top: 93px;
+  line-height: 0.01;
+}
+.recruitment_inFor h2 {
+  font-size: 3.5rem;
+  color: #000000;
+  line-height: 1;
+}
+
+.recruitment_img img {
+  width: 523px;
+  height: 535px;
+  margin-top: -21px;
+}
+
+.recruitment_text p {
+  margin-top: 129px;
+  width: 675px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: 18px;
+  color: rgba(30, 28, 28, 0.88);
+}/*# sourceMappingURL=About1.module.css.map */

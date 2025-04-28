@@ -8,9 +8,12 @@ import AuthService from "@/services/AuthService";
 import { useEffect } from "react";
 import useDebounce from "@/hooks/useDebounce";
 import registerSchema from "@/Shema/registerShema";
+import { postRegister } from "@/features/auth/authAsync";
+import { useDispatch } from "react-redux";
 function Register() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -29,38 +32,38 @@ function Register() {
     resolver: yupResolver(registerSchema),
   });
   const emailValue = watch("email");
-  const debounceValue = useDebounce(emailValue, 600)
+  const debounceValue = useDebounce(emailValue, 600);
   useEffect(() => {
-     if(!debounceValue) return;
- const checkEmail =  async () => {
-      const isValid = await trigger("email")
-      if(isValid){
+    if (!debounceValue) return;
+    const checkEmail = async () => {
+      const isValid = await trigger("email");
+      if (isValid) {
         const exists = await AuthService.checkEmail(debounceValue);
-        if(exists){
+        if (exists) {
           setError("email", {
             type: "manual",
-            message: "Email đã được sử dụng"
+            message: "Email đã được sử dụng",
           });
         }
       }
-    }
+    };
     checkEmail();
-  }, [debounceValue, trigger, setError])
+  }, [debounceValue, trigger, setError]);
   const onSubmit = async (data) => {
     try {
       console.log(data);
-      const res = await AuthService.postRegister(data);
-      localStorage.setItem("token", res.access_token);
-      navigate(params.get("continue") || config.routes.home);
-    } catch (error){
+      const res = await dispatch(postRegister(data));
+      if (postRegister.fulfilled.match(res)) {
+        navigate(params.get("continue") || config.routes.home);
+      }
+    } catch (error) {
       console.log(error);
-      
-        setError("password", {
-          type: "manual",
-          message: "Tài khoản và mật khẩu không hợp lệ"
-        })
+
+      setError("password", {
+        type: "manual",
+        message: "Tài khoản và mật khẩu không hợp lệ",
+      });
     }
-   
   };
   return (
     <div className={styles.wrapper}>
@@ -146,7 +149,9 @@ function Register() {
           placeholder="Nhập lại mật khẩu"
           {...register("password_confirmation")}
         />
-        {errors.password_confirmation && <span>{errors.password_confirmation.message}</span>}
+        {errors.password_confirmation && (
+          <span>{errors.password_confirmation.message}</span>
+        )}
 
         <Button large>ĐĂNG KÝ TÀI KHOẢN</Button>
       </form>

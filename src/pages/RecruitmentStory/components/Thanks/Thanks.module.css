@@ -1,0 +1,24 @@
+.recruitment_thanks {
+  background-color: #2f5acf;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 30px;
+}
+
+.thanks_content {
+  padding-left: 0;
+  padding-right: 0;
+}
+.thanks_content h2 {
+  font-style: normal;
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.25rem;
+  text-transform: initial;
+  padding: 0 27rem;
+  margin-bottom: 3px;
+}
+.thanks_content span {
+  color: #fff;
+}/*# sourceMappingURL=Thanks.module.css.map */

@@ -1,0 +1,30 @@
+.wrapper {
+    width: 100%;
+    background-color: #e60012; 
+    display: flex;
+    justify-content: center;
+    height: 32px;
+    align-items: center;
+  }
+  
+  .siteBar {
+    align-items: center;
+    padding-left: 64px;
+    padding-right: 64px;
+  
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px; 
+      text-decoration: none;
+      color: #ffc107; 
+      font-weight: 500;
+      font-size: 16px;
+
+    }
+  
+    svg {
+      margin-left: 4px;
+    }
+  }
+  

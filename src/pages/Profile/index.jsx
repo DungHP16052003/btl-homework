@@ -1,23 +1,19 @@
-import AuthService from "@/services/AuthService";
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux"; // THÊM
 import styles from "./Profile.module.scss";
 import { Link } from "react-router-dom";
 import config from "@/config";
+import { useGetUserQuery } from "@/services/profile";
 
 function Profile() {
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    (async () => {
-      try {
-        const data = await AuthService.getCurrentUser();
+  const currentUser = useSelector((state) => state.auth.currentUser); // LẤY currentUser từ Redux
 
-        data && setUser(data);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+  const username = currentUser?.username; // LẤY username
+
+  const { data, isLoading } = useGetUserQuery(username);
+  if (isLoading) return <p>Loading...</p>;
+
   const getDisplay = (value) => (value ? value : "Chưa cập nhật");
+
   return (
     <section className={styles.wrapper}>
       <div className={styles.header}>
@@ -26,26 +22,26 @@ function Profile() {
         </div>
         <div className={styles.displayAccount}>
           <p>
-            <b>Họ và tên:</b> {user?.firstName} {user?.lastName}
+            <b>Họ và tên:</b> {data?.data?.firstName} {data?.data?.lastName}
           </p>
           <p>
-            <b>age:</b> {getDisplay(user?.age)}
+            <b>age:</b> {getDisplay(data?.data?.age)}
           </p>
           <p>
-            <b>Email:</b> {user?.email}
+            <b>Email:</b> {data?.data?.email}
           </p>
           <p>
-            <b>Giới tính:</b> {getDisplay(user?.gender)}
+            <b>Giới tính:</b> {getDisplay(data?.data?.gender)}
           </p>
           <p>
-            <b>Số điện thoại:</b> {getDisplay(user?.phone)}
+            <b>Số điện thoại:</b> {getDisplay(data?.data?.phone)}
           </p>
           <p>
-            <b>Ngày sinh:</b> {getDisplay(user?.birthDate)}
+            <b>Ngày sinh:</b> {getDisplay(data?.data?.birthDate)}
           </p>
           <p>
-            <b>Cập nhật tài khoản:</b>{" "}
-            {user?.emailVerifiedAt
+            <b>Cập nhật tài khoản:</b>
+            {data?.data?.emailVerifiedAt
               ? "Tài khoản đã được xác minh"
               : "Tài khoản chưa xác minh"}
           </p>
@@ -60,7 +56,7 @@ function Profile() {
         </div>
         <div className={styles.displayUser}>
           <p>
-            <b>Email:</b> {user?.email}
+            <b>Email:</b> {data?.data?.email}
           </p>
         </div>
         <Link to={config.routes.editProfile}>

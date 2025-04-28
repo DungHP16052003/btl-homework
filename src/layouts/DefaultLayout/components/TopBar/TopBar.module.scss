@@ -1,0 +1,28 @@
+.wrapper {
+    background-color: #202020a6;
+}
+.topBar {
+   display: flex
+;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1440px;
+    height: 40px;
+    align-items: center;
+}
+.topBar ul {
+    display: flex;
+    gap: 18px;
+}
+.topBar li {
+    list-style-type: none;
+}
+.topBar li a {
+    text-decoration: none;
+    color: #ccc;
+}
+.topBar li:hover {
+    background-color: #1f1d1d;
+   
+}

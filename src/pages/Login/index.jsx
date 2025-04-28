@@ -2,33 +2,34 @@ import styles from "./Login.module.scss";
 import config from "@/config";
 import Button from "@/components/Button";
 import { Link, useNavigate } from "react-router-dom";
-import AuthService from "@/services/AuthService";
-import httpRequest from "@/utils/httpRequest";
 import useQuery from "@/hooks/useQuery";
-import Form ,{ TextInput } from "@/components/Forms";
+import Form, { TextInput } from "@/components/Forms";
 import loginSchema from "@/Shema/loginSchema";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { postLogin } from "@/features/auth/authAsync";
 
 function Login() {
-  const query = useQuery();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const query = useQuery();
 
   const handleSubmit = async (data) => {
-    const res = await AuthService.postLogin(data);
-    httpRequest.setToken(res.access_token);
-    navigate(query.get("continue") || config.routes.home);
+    const result = await dispatch(postLogin(data));
+    if (postLogin.fulfilled.match(result)) {
+      navigate(query.get("continue") || config.routes.home);
+    }
   };
   const err = useSelector((state) => state.auth.error);
 
   useEffect(() => {
     if (err) {
-        if (err === "Unauthenticated") {
-            localStorage.removeItem("token");
-            window.top.location.href = "http://localhost:5173/";
-        }
+      if (err === "Unauthenticated") {
+        localStorage.removeItem("token");
+        window.top.location.href = "http://localhost:5173/";
+      }
     }
-}, [err]);
+  }, [err]);
   return (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
@@ -77,13 +78,17 @@ function Login() {
           </button>
         </div>
       </div>
-      <Form 
+      <Form
         className={styles.login_form}
         schema={loginSchema}
         onSubmit={handleSubmit}
       >
         <TextInput inputClassName={styles.email} type="email" name="email" />
-        <TextInput inputClassName = {styles.password} type="password" name="password" />
+        <TextInput
+          inputClassName={styles.password}
+          type="password"
+          name="password"
+        />
         <Button large>ĐĂNG NHẬP</Button>
       </Form>
       <div>

@@ -14,85 +14,91 @@ import EditProfile from "@/pages/Profile/Component/EditProfile";
 import RecruitmentJobs from "@/pages/RecruitmentJobs";
 import RecruitmentStory from "@/pages/RecruitmentStory";
 import RecruitmentExcellent from "@/pages/RecruitmentExcellent/component";
-
-
+import History from "@/pages/History";
+import Delivery from "@/pages/Delivery";
+import Security from "@/pages/Security";
 
 const routes = [
-    {
-        path: config.routes.home,
-        component: Home,
+  {
+    path: config.routes.home,
+    component: Home,
+  },
+  {
+    path: config.routes.home2,
+    component: Home2,
+  },
+  //Auth
+  {
+    path: config.routes.register,
+    component: Register,
+    layout: AdminLayout,
+  },
+  {
+    path: config.routes.login,
+    component: Login,
+    layout: AdminLayout,
+  },
+  //Products
+  {
+    path: config.routes.products,
+    component: Products,
+  },
+  {
+    path: config.routes.profile,
+    component: Profile,
+    layout: NoFooterLayout,
+  },
+  {
+    path: config.routes.editProfile,
+    component: EditProfile,
+    layout: NoFooterLayout,
+  },
+  {
+    path: config.routes.product,
+    component: ProductDetail,
+    layout: null,
+  },
+  {
+    path: config.routes.recruitment,
+    component: RecruitmentJobs,
+    layout: NoFooterLayout,
+  },
+  {
+    path: config.routes.recruitmentStory,
+    component: RecruitmentStory,
+    layout: NoFooterLayout,
+  },
+  {
+    path: config.routes.RecruitmentExcellent,
+    component: RecruitmentExcellent,
+    layout: NoFooterLayout,
+  },
+  {
+    path: config.routes.history,
+    component: History,
+    layout: NoFooterLayout,
+  },
+  {
+    path: config.routes.delivery,
+    component: Delivery,
+    layout: NoFooterLayout,
+  },
+  {
+    path: config.routes.security,
+    component: Security,
+    layout: NoFooterLayout,
+  },
+  //Users
+  {
+    path: config.routes.users,
+    component: Users,
+    protected: true,
+  },
 
-    },
-    {
-        path: config.routes.home2,
-        component: Home2,
+  {
+    path: config.routes.notfound,
+    component: NotFound,
+  },
+];
 
-    },
-    //Auth
-    {
-        path: config.routes.register,
-        component: Register,
-        layout:AdminLayout,
-
-    },
-    {
-        path: config.routes.login,
-        component: Login,
-        layout:AdminLayout,
-
-    },
-    //Products
-    {
-        path: config.routes.products,
-        component: Products,
-    },
-    {
-        path: config.routes.profile,
-        component: Profile,
-        layout:NoFooterLayout,
-
-    },
-    {
-        path: config.routes.editProfile,
-        component: EditProfile,
-        layout:NoFooterLayout,
-
-    },
-    {
-        path: config.routes.product,
-        component: ProductDetail,
-        layout:null,
-    },
-    {
-        path: config.routes.recruitment,
-        component: RecruitmentJobs,
-        layout:NoFooterLayout,
-
-    },
-    {
-        path: config.routes.recruitmentStory,
-        component: RecruitmentStory ,
-        layout:NoFooterLayout,
-
-    },
-    {
-        path: config.routes.RecruitmentExcellent,
-        component: RecruitmentExcellent ,
-        layout:NoFooterLayout,
-
-    },
-    //Users
-    {
-        path: config.routes.users,
-        component: Users,
-        protected: true,
-
-    },
-
-    {
-        path: config.routes.notfound,
-        component: NotFound,
-    }
-]
-
-export default routes
+export default routes;

@@ -44,9 +44,9 @@ function Banner() {
               <div className={styles.coolmate}>
                 <div className={styles.tab_img}>
                   <img
-                    src="https://mcdn.coolmate.me/image/October2023/mceclip3_90.png"
+                    src="https://mcdn.coolmate.me/image/October2023/mceclip6_55.png"
                     alt=""
-                  />
+                  ></img>
                 </div>
                 <div className={styles.tab_content}>
                   <p>Coolmate</p>

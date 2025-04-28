@@ -1,0 +1,123 @@
+.recruitment_banner {
+  position: relative;
+}
+
+.recruitment_img img {
+  width: 1577px;
+  height: 900px;
+}
+
+.recruitment_content h1 {
+  position: absolute;
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  top: 42%;
+  right: 17%;
+  width: 946px;
+  text-transform: uppercase;
+}
+.recruitment_content h3 {
+  position: absolute;
+  color: #fff;
+  font-weight: 700;
+  top: 52%;
+  right: 25%;
+  width: 790px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 23px;
+}
+
+.recruitment_cta a {
+  text-decoration: none;
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  padding: 15px 50px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #000;
+  top: 65%;
+  right: 40%;
+}
+
+span img {
+  max-width: 20px;
+  margin-left: 10px;
+}
+
+.recruitment_tab {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.story {
+  display: flex;
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  padding: 10px 40px;
+  width: 229px;
+  height: 70px;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 94%;
+  left: 19%;
+}
+.story p {
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: all 0.3s;
+  color: #000;
+}
+
+.coolmate {
+  display: flex;
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  padding: 10px 40px;
+  width: 229px;
+  height: 70px;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 94%;
+  left: 40%;
+}
+.coolmate p {
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: all 0.3s;
+  color: #000;
+}
+
+.display {
+  display: flex;
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  padding: 10px 40px;
+  width: 229px;
+  height: 70px;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 94%;
+  left: 61%;
+}
+.display p {
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: all 0.3s;
+  color: #000;
+}
+
+.tab_img > img {
+  width: 60px;
+}/*# sourceMappingURL=Banner2.module.css.map */

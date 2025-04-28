@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./UserIcon.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faDollar } from "@fortawesome/free-solid-svg-icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "@/features/auth/authAsync";
 
 function UserIcon() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.auth.currentUser);
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
 
   const handleLogin = () => {
     navigate("/login");
@@ -22,7 +29,6 @@ function UserIcon() {
     }
   };
 
- const currentUser = useSelector((state) => state.auth.currentUser)
   return (
     <div className={styles.wrapper}>
       <div className={styles.icon_user}>
@@ -31,11 +37,13 @@ function UserIcon() {
         </div>
       </div>
 
-      {currentUser && isOpen && (
+      {isOpen && (
         <div className={`${styles.user_info} ${styles.show}`}>
           <div className={styles.user_admin}>
             <div className={styles.user_information}>
-              <h1>Hi, {currentUser.firstName + " " + currentUser.lastName} </h1>
+              <h1>
+                Hi, {currentUser?.firstName + " " + currentUser?.lastName}{" "}
+              </h1>
             </div>
 
             <div className={styles.user_level}>
@@ -133,12 +141,12 @@ function UserIcon() {
                 </p>
               </div>
               <div className={styles.button_refer}>
-                 <button className={styles.share}>chia sẻ</button>
-                 <button className={styles.find}>Tìm hiểu thêm</button>
+                <button className={styles.share}>chia sẻ</button>
+                <button className={styles.find}>Tìm hiểu thêm</button>
               </div>
             </div>
             <div className={styles.button_account}>
-              <Link to={`/p/${currentUser.username}`}>
+              <Link to={`/p/${currentUser?.username}`}>
                 <button>
                   <p>Đi đến tài khoản</p>
                 </button>
