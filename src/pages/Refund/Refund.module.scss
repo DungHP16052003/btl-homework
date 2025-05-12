@@ -1,0 +1,144 @@
+
+.refund_text{
+    padding-left: 64px;
+    padding-right: 64px;
+    margin: 0 auto;
+    max-width: 1076px;
+}
+.refund_text > h1{
+    font-size: 2.625rem;
+    margin: 0;
+    color: #231f20;
+}
+.refund_controller{
+    padding-left: 64px;
+    padding-right: 64px;
+    margin: 0 auto;
+    max-width: 1076px;
+    
+}
+.refund_img img{
+    width: 1072px;
+    height: 380px;
+    margin-bottom: 30px;
+}
+.refund_youtube iframe{
+    width: 1076px;
+    height: 507px;
+}
+.content_text{
+    background: #2f5acf;
+    border-radius: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    text-align: center;
+    h2{
+        color: #f2fd5d;
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 1em;
+    }
+    p{
+        color: #fff;
+    font-size: 2rem;
+    margin: 0;
+    }
+}
+.refund_inFor{
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    gap: 20px;
+}
+.inFor_content{
+    width: 50%;
+    h3{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #231f20;
+    }
+    h4{
+        font-size: 1.5rem;
+    font-weight: 600;
+        color: #231f20;
+
+    }
+}
+.inFor_content .btn{
+    border-radius: 1.5rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 48px;
+    text-transform: uppercase;
+}
+.btn{
+    align-items: center;
+    background-color: #000;
+    border: 2px solid #000;
+    border-radius: 16px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    height: 40px;
+    justify-content: center;
+    padding: 0 30px;
+    transition: all .2s;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.2);}
+
+.inFor_img img{
+    width: 527px;
+    height: 529px;
+}
+
+.delivery_img img{
+    width: 1072px;
+    height: 225px;
+}
+.policy_content{
+    background: #2f5acf;
+    border-radius: 2rem;
+    padding: 3.25rem 2.5rem 2.5rem;
+    h4{
+        color: #fff;
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+.grid_policy{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.policy_column{
+    width: 33.3333333333%;
+}
+.policy_item{
+    background: #fff;
+    border-radius: 1.5rem;
+    height: 100%;
+    padding: 1rem;
+    h5{
+        font-size: 1.5rem;
+    font-weight: 600;
+    }
+    p{
+        margin: 0;
+    }
+}
+.policy_item .btn{
+    background: #2f5acf;
+    border: none;
+    border-radius: 1.5rem;
+    color: #fff;
+    height: unset;
+    margin-top: .8rem;
+    padding: .7rem 1.3rem;
+}
+.policy_img{
+    display: flex;
+    justify-content: flex-end;
+}

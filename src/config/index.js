@@ -19,6 +19,7 @@ const config = {
     //Delivery
     delivery: "/delivery",
     security: "/security",
+    refund: "/refund",
     //Users:
     users: "/users",
     notfound: "*",

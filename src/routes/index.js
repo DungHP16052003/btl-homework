@@ -17,6 +17,7 @@ import RecruitmentExcellent from "@/pages/RecruitmentExcellent/component";
 import History from "@/pages/History";
 import Delivery from "@/pages/Delivery";
 import Security from "@/pages/Security";
+import Refund from "@/pages/Refund";
 
 const routes = [
   {
@@ -86,6 +87,11 @@ const routes = [
   {
     path: config.routes.security,
     component: Security,
+    layout: NoFooterLayout,
+  },
+  {
+    path: config.routes.refund,
+    component: Refund,
     layout: NoFooterLayout,
   },
   //Users
